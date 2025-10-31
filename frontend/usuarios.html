@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuários</title>
+    <style>
+        body { font-family: Arial; background: #fafafa; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background: #4CAF50; color: white; }
+        form { margin-bottom: 20px; }
+        input { padding: 5px; margin-right: 10px; }
+        button { padding: 6px 10px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+<h2>Usuários Cadastrados</h2>
+
+<form onsubmit="event.preventDefault(); criarUsuario();">
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="number" id="idade" placeholder="Idade" required>
+    <button type="submit">Adicionar</button>
+</form>
+
+<table>
+    <thead>
+    <tr><th>ID</th><th>Nome</th><th>Idade</th></tr>
+    </thead>
+    <tbody id="listaUsuarios"></tbody>
+</table>
+
+<script src="script.js"></script>
+<script>
+    carregarUsuarios();
+</script>
+</body>
+</html>
